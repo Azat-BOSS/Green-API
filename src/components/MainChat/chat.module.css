@@ -1,0 +1,24 @@
+.main__chat {
+  position: absolute;
+  width: calc(100% - 30vw);
+  height: 100vh;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.chat__wrapper__input {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 10rem;
+  background-color: rgba(232, 232, 232, 0.602);
+  position: absolute;
+  padding-bottom: 3rem;
+  bottom: 0;
+}
+.main__chat__container {
+  padding: 1rem 3rem;
+  height: calc(100% - 12rem);
+  overflow: scroll;
+}

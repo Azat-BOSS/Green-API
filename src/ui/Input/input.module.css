@@ -1,0 +1,25 @@
+.input {
+  background-color: white;
+  padding-left: 5rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  height: inherit;
+  padding: inherit;
+  padding-left: 5rem;
+  width: inherit;
+}
+
+.input__container {
+  width: 100% !important;
+  height: 2.5rem;
+  padding: 2rem;
+  position: relative;
+  width:auto;
+}
+
+.input__container img {
+  position: absolute;
+  left: 3.5rem;
+  top: 100%;
+  transform: translateY(-50%);
+}
