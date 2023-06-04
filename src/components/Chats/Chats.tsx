@@ -19,10 +19,11 @@ const Chats: FC = () => {
   const chatsSelector = createSelector(
     (state: RootState) => state.ChatsSlice.data,
     (state: RootState) => state.ChatsSlice.chatId,
-    (data, chatId) => ({data, chatId})
+    (state: RootState) => state.ModalSlice.isActiveModal,
+    (data, chatId, isActiveModal) => ({data, chatId, isActiveModal})
   )
 
-  const {data, chatId} = useSelector(chatsSelector)
+  const {data, chatId, isActiveModal} = useSelector(chatsSelector)
  
   useEffect(() => {
     dispatch(chatsThunk())
