@@ -1,13 +1,16 @@
 import { FC } from "react";
 import layoutStyle from "./layout.module.css"
 import { routers, privateRouters } from "../routers/routers";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import RequireAuth from "../hoc/RequireAuth";
 
 export const Layout: FC = () => {
   const location = useLocation()
   const background = location.state && location.state.background
+  if(location.pathname === "/") {
+    return <Navigate to={"/auth"}/>
+  }
 
   return (  
     <div className={layoutStyle.layout}>
