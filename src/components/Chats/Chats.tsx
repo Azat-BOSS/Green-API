@@ -1,4 +1,4 @@
-import { FC, useEffect, memo, useCallback } from "react";
+import { FC, useEffect, memo } from "react";
 import chatsStyle from "./chats.module.css";
 import ChatBtn from "../../ui/ChatBtn/ChatBtn";
 import { createSelector } from "@reduxjs/toolkit";
