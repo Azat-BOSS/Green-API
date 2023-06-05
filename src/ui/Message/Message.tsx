@@ -6,11 +6,12 @@ interface Message {
   number: string;
   message: string;
   extendedMessage?: string;
-  time?: number;
+  time?: string;
   myMsg: boolean
 }
 
 const Message: FC<Message> = ({name, number, message, extendedMessage, time, myMsg}) => {
+  console.log(time)
   return (  
     <>
     {message && (
@@ -32,6 +33,7 @@ const Message: FC<Message> = ({name, number, message, extendedMessage, time, myM
             {message}
           </p>
         )}
+        <p className={messageStyle.message__time}>{time}</p>
       </div>
     </div>
     )}

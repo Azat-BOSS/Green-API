@@ -1,16 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { API } from "../../utils/constants";
 import { getCookie } from "../../utils/cookies/cookie";
-
-type TAuth = {
-  idInst?: string;
-  apiToken?: string;
-}
-
-type TInitialState = {
-  message: any;
-  success: boolean | null;
-}
+import { TInitialState } from "./types";
+import { TAuth } from "./types";
 
 const initialState: TInitialState = {
   message: {},

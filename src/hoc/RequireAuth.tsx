@@ -10,6 +10,7 @@ const RequireAuth: FC<IRequireAuth> = ({children}) => {
   if(getCookie("idInstance") === undefined || getCookie("apiToken") === undefined) {
     return <Navigate to={"/auth"} replace={true}/>
   }
+  
   return (  
     <div className="test">
       {children}

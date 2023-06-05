@@ -40,6 +40,9 @@ const GetMsgSlice = createSlice({
   reducers: {
     sendMsg(state, action) {
       state.dataMessages = [...state.dataMessages, action.payload]
+    },
+    changeStatusLoader(state, action) {
+      state.success = action.payload
     }
   },
   extraReducers: (builder) => {
@@ -58,5 +61,5 @@ const GetMsgSlice = createSlice({
   } 
 })
 
-export const { sendMsg } = GetMsgSlice.actions
+export const { sendMsg, changeStatusLoader } = GetMsgSlice.actions
 export default GetMsgSlice.reducer
