@@ -23,5 +23,6 @@ export type TGetMsgThunk = {
 
 export type TInitialState = {
   dataMessages: TGetdataMessages[];
+  crnMessages: TGetdataMessages[];
   success: boolean | null
 }

@@ -1,7 +1,5 @@
-import { FC, useCallback, useEffect, memo } from "react";
+import { FC, useEffect, memo, useCallback } from "react";
 import chatsStyle from "./chats.module.css";
-import Input from "../../ui/Input/Input";
-import loopIcon from "../../assets/icons/loop.svg";
 import ChatBtn from "../../ui/ChatBtn/ChatBtn";
 import { createSelector } from "@reduxjs/toolkit";
 import { RootState, useAppDispatch } from "../../services/store";
@@ -14,6 +12,7 @@ import {GetChatMessages} from "../../services/GetChatMessages/GetChatMessages";
 import { changeModalState } from "../../services/Modal/ModalSlice";
 
 const Chats: FC = () => {
+
   const dispatch = useAppDispatch()
 
   const chatsSelector = createSelector(
@@ -37,15 +36,10 @@ const Chats: FC = () => {
     dispatch(GetChatMessages({count: 100, chatId: chatId!}))
   }, [GetChatMessages, chatId, dispatch])
 
-
   return ( 
     <aside className={chatsStyle.chats}>
       <div className={chatsStyle.chats__upper__banner}>
         <div className={chatsStyle.chats__input__wrapper}>
-          <Input 
-            placeholder="Поиск ..." 
-            type="text"
-            icon={loopIcon}/>
         </div>
       </div>
       <div className={chatsStyle.chats__users__btns}>

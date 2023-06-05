@@ -8,6 +8,7 @@ const apiToken: string = getCookie("apiToken")!;
 
 const initialState: TInitialState = {
   dataMessages: [],
+  crnMessages: [],
   success: null
 }
 
@@ -36,7 +37,14 @@ export const GetChatMessages = createAsyncThunk(
 const GetMsgSlice = createSlice({
   name: "message/slice",
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    sendMsg(state, action) {
+      state.dataMessages = [...state.dataMessages, action.payload]
+    },
+    changeStatusLoader(state, action) {
+      state.success = action.payload
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(GetChatMessages.pending, (state) => {
@@ -44,7 +52,8 @@ const GetMsgSlice = createSlice({
       })
       .addCase(GetChatMessages.fulfilled, (state, action) => {
         state.success = true
-        state.dataMessages = action.payload
+        let reversedArr = [...action.payload]
+        state.dataMessages = reversedArr.reverse()
       })
       .addCase(GetChatMessages.rejected, (state) => {
         state.success = false
@@ -52,4 +61,5 @@ const GetMsgSlice = createSlice({
   } 
 })
 
+export const { sendMsg, changeStatusLoader } = GetMsgSlice.actions
 export default GetMsgSlice.reducer

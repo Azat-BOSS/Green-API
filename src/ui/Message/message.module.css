@@ -11,6 +11,7 @@
   padding: 1rem;
   border-radius: 1rem;
   margin-top: 2rem;
+  position: relative;
 }
 
 .message_another {
@@ -23,6 +24,7 @@
   -moz-box-shadow: 0px -1px 18px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 0px -1px 18px 0px rgba(34, 60, 80, 0.2);
   margin-top: 2rem;
+  position: relative;
 }
 
 .message__extend__block_another {
@@ -56,4 +58,11 @@
   padding: 1rem;
   border-radius: 1rem;
   margin: 1rem 0;
+}
+.message__time {
+  position: absolute;
+  right: 1rem;
+  bottom: .5rem;
+  font-size: 1rem;
+  opacity: .6;
 }
